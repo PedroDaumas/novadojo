@@ -2,17 +2,21 @@
 mod test;
 
 fn main() {
-  let s = Vec::new();
-  let g = Vec::new();
+  let s: Vec<String> = vec!["blue".to_string()];
+  let g: Vec<String> = vec!["blue".to_string()];
   evaluate(s, g);
 }
 
 fn evaluate(secret: Vec<String>, guess: Vec<String>) {
-  println!("Secret: {}", secret);
-  println!("Guess: {}", guess);
-}
-
-
-fn sum(a: i32, b:i32) -> i32 {
-  return a + b;
+  //iterar
+  let mut count_match: u8;
+  for x in secret {
+    if (secret.contains(&x) ) {
+      count_match++;
+    }
+  }
+  let mut response: bool = secret.contains(&guess);
+  println!("Secret: {:?}", secret);
+  println!("Guess: {:?}", guess);
+  println!("Response: {:?}", response);
 }
