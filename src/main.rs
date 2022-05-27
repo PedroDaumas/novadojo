@@ -7,16 +7,18 @@ fn main() {
   evaluate(s, g);
 }
 
-fn evaluate(secret: Vec<String>, guess: Vec<String>) {
+fn evaluate(secret: Vec<String>, guess: Vec<String>) -> Vec<u8> {
   //iterar
   let mut count_match: u8;
   for x in secret {
     if (secret.contains(&x) ) {
-      count_match++;
+      count_match += 1;
     }
   }
-  let mut response: bool = secret.contains(&guess);
+  // let mut response: bool = secret.contains(&guess);
   println!("Secret: {:?}", secret);
   println!("Guess: {:?}", guess);
   println!("Response: {:?}", response);
+
+  return vec![0, 1];
 }
